@@ -1,0 +1,15 @@
+#hytrix-Archaius默认加载classpath下的config.properties文件
+#也可以通过-d参数设置archaius.configurationSource.additionalUrls=classpath:application.properties
+
+hystrix: 
+  command:   
+    paas-file:   
+      execution:   
+        isolation:   
+          thread:   
+            timeoutInMilliseconds: 3600000   
+    default:   
+      execution:   
+        isolation:   
+          thread:   
+            timeoutInMilliseconds: 8000  #命令执行超时时间，默认1000ms

@@ -1,0 +1,22 @@
+management:
+  security:
+    enabled: false
+spring: 
+  cloud: 
+    config:
+      discovery:
+        enabled: true
+        service-id: gm-config-server
+      label: master
+      name: gm-ai-ms
+      profile: test
+      uri: http://ms.m.com:12222/
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://ms.m.com:7777/eureka/
+  instance: 
+    lease-renewal-interval-in-seconds: 1 
+    lease-expiration-duration-in-seconds: 2 
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  
+    prefer-ip-address: true

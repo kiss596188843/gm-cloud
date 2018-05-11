@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>gm-parent</artifactId>
+        <groupId>com.cetiti</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>gm-robot-ms</artifactId>
+    <packaging>pom</packaging>
+
+    <name>gm-robot-ms</name>
+    <description>gm-robot</description>
+
+    <modules>
+        <module>gm-robot-entity</module>
+        <module>gm-robot-service</module>
+        <module>gm-robot-common</module>
+        <module>gm-robot-web</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.cetiti</groupId>
+            <artifactId>gm-dependencies</artifactId>
+            <optional>true</optional>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+    <developers>
+        <developer>
+            <name>chenbobo</name>
+            <email>chenbobo@cetiti.com</email>
+            <organization>cetiti</organization>
+        </developer>
+    </developers>
+
+</project>

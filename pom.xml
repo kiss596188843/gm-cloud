@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cetiti</groupId>
+	<artifactId>gm-cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>gm-cloud</name>
+	<description>gm-cloud</description>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>gm</module>
+		<module>gm-registry-server</module>
+		<module>gm-config-server</module>
+		<module>gm-ai-ms</module>
+		<module>gm-robot-ms</module>
+		<module>gm-hystrix-ribbon-server</module>
+		<module>gm-hystrix-tubine-server</module>
+		<module>gm-hystrix-dashboard-server</module>
+		<module>gm-gateway</module>
+	</modules>
+
+</project>

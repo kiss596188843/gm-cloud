@@ -1,0 +1,36 @@
+server:
+  port: 6666
+  
+spring:
+  application:
+    name: gm-hystrix-tubine-server
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://ms.m.com:7777/eureka/
+  instance: # 心跳检测检测与续约时间 # 测试时将值设置设置小些，保证服务关闭后注册中心能及时踢出服务
+    lease-renewal-interval-in-seconds: 1 #每间隔1s，向服务端发送一次心跳，证明自己依然”存活“
+    lease-expiration-duration-in-seconds: 2 #告诉服务端，如果我2s之内没有给你发心跳，就代表我“死”了，将我踢出掉
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  
+    prefer-ip-address: true
+
+logging:
+  config: classpath:logback.xml
+  
+
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: GM-HYSTRIX-RIBBON-SERVER
+  clusterNameExpression: "'default'"
+  combine-host-port: true
+    
+
+  
+#http://10.0.30.60:6666/turbine.stream 
+#启动后 访问dashboard http://ip:port/turbine.stream
+
+
+
+

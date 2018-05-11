@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.cetiti</groupId>
+		<artifactId>gm-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>gm-ai-ms</artifactId>
+	<packaging>pom</packaging>
+	<name>gm-ai-ms</name>
+	<description>gm-ai-ms</description>
+	<modules>
+		<module>gm-ai-entity</module>
+		<module>gm-ai-service</module>
+		<module>gm-ai-web</module>
+	</modules>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.cetiti</groupId>
+			<artifactId>gm-dependencies</artifactId>
+			<optional>true</optional>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+	</dependencies>
+	<developers>
+		<developer>
+			<name>chenbobo</name>
+			<email>chenbobo@cetiti.com</email>
+			<organization>cetiti</organization>
+		</developer>
+	</developers>
+</project>

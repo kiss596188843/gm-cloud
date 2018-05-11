@@ -1,0 +1,50 @@
+server:
+  port: 1111
+
+spring:
+  application:
+    name: gm-gateway-server
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://ms.m.com:7777/eureka/
+  instance: 
+    lease-renewal-interval-in-seconds: 1 
+    lease-expiration-duration-in-seconds: 2 
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}  
+    prefer-ip-address: true
+#zuul:
+ # routes:  #zuul已自动为eureka内部管理的服务自动创建了 这种转发规则  除非需要个性化定制  如果想忽略某个服务 请用ignored-services 也可以集成配置中心实现动态加载 包括动态路由 动态过滤器等
+    #gm-hystrix-ribbon-server: 
+    #  path: /gm-hystrix-ribbon-server/**
+    #  serviceId: gm-hystrix-ribbon-server
+      
+    #gm-hystrix-ribbon-server: /gm-hystrix-ribbon-server/**
+   
+logging:
+  config: classpath:logback.xml
+  
+  
+hystrix: 
+  command:   
+    paas-file:   
+      execution:   
+        isolation:   
+          thread:   
+            timeoutInMilliseconds: 3600000   
+    default:   
+      execution:   
+        isolation:   
+          thread:   
+            timeoutInMilliseconds: 8000  #命令执行超时时间，默认1000ms
+ribbon: 
+  ReadTimeout: 1000
+
+
+
+

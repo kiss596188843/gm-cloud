@@ -1,0 +1,13 @@
+server: 
+  port: 7777
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://ms.m.com:${server.port}/eureka/
+  server:
+    enable-self-preservation: true
+  instance:
+    prefer-ip-address: true
+

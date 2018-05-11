@@ -1,0 +1,14 @@
+#http://10.0.30.60:5555/hystrix  http://10.0.30.60:8888/hystrix.stream GM-HYSTRIX-SERVER
+server: 
+  port: 5555
+
+spring:
+  application:
+    name: gm-hystrix-dashboard-server
+
+logging:
+  config: classpath:logback.xml
+
+
+
+
